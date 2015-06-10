@@ -14,6 +14,18 @@
 		E53317C21B28B01400B008DB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E53317C11B28B01400B008DB /* Images.xcassets */; };
 		E53317C51B28B01400B008DB /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E53317C31B28B01400B008DB /* LaunchScreen.xib */; };
 		E53317D11B28B01400B008DB /* NJDOT_FuelUp_v2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53317D01B28B01400B008DB /* NJDOT_FuelUp_v2Tests.swift */; };
+		E5CE16971B28DDDA00731016 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5CE16951B28DDDA00731016 /* Bolts.framework */; };
+		E5CE16981B28DDDA00731016 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5CE16961B28DDDA00731016 /* Parse.framework */; };
+		E5CE169A1B28DE0400731016 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5CE16991B28DE0400731016 /* AudioToolbox.framework */; };
+		E5CE169C1B28DE0900731016 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5CE169B1B28DE0900731016 /* CFNetwork.framework */; };
+		E5CE169E1B28DE0F00731016 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5CE169D1B28DE0F00731016 /* CoreLocation.framework */; };
+		E5CE16A01B28DE1700731016 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5CE169F1B28DE1700731016 /* MobileCoreServices.framework */; };
+		E5CE16A21B28DE1F00731016 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5CE16A11B28DE1F00731016 /* QuartzCore.framework */; };
+		E5CE16A41B28DE2600731016 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5CE16A31B28DE2600731016 /* Security.framework */; };
+		E5CE16A61B28DE2E00731016 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5CE16A51B28DE2E00731016 /* StoreKit.framework */; };
+		E5CE16A81B28DE3600731016 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5CE16A71B28DE3600731016 /* SystemConfiguration.framework */; };
+		E5CE16AA1B28DE4000731016 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E5CE16A91B28DE4000731016 /* libz.dylib */; };
+		E5CE16AC1B28DE4600731016 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E5CE16AB1B28DE4600731016 /* libsqlite3.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +50,18 @@
 		E53317CA1B28B01400B008DB /* NJDOT_FuelUp_v2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NJDOT_FuelUp_v2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E53317CF1B28B01400B008DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E53317D01B28B01400B008DB /* NJDOT_FuelUp_v2Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NJDOT_FuelUp_v2Tests.swift; sourceTree = "<group>"; };
+		E5CE16951B28DDDA00731016 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		E5CE16961B28DDDA00731016 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		E5CE16991B28DE0400731016 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		E5CE169B1B28DE0900731016 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		E5CE169D1B28DE0F00731016 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		E5CE169F1B28DE1700731016 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		E5CE16A11B28DE1F00731016 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		E5CE16A31B28DE2600731016 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		E5CE16A51B28DE2E00731016 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		E5CE16A71B28DE3600731016 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		E5CE16A91B28DE4000731016 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		E5CE16AB1B28DE4600731016 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +69,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5CE16AC1B28DE4600731016 /* libsqlite3.dylib in Frameworks */,
+				E5CE16AA1B28DE4000731016 /* libz.dylib in Frameworks */,
+				E5CE16A81B28DE3600731016 /* SystemConfiguration.framework in Frameworks */,
+				E5CE16A61B28DE2E00731016 /* StoreKit.framework in Frameworks */,
+				E5CE16A41B28DE2600731016 /* Security.framework in Frameworks */,
+				E5CE16A21B28DE1F00731016 /* QuartzCore.framework in Frameworks */,
+				E5CE16A01B28DE1700731016 /* MobileCoreServices.framework in Frameworks */,
+				E5CE169E1B28DE0F00731016 /* CoreLocation.framework in Frameworks */,
+				E5CE169C1B28DE0900731016 /* CFNetwork.framework in Frameworks */,
+				E5CE169A1B28DE0400731016 /* AudioToolbox.framework in Frameworks */,
+				E5CE16981B28DDDA00731016 /* Parse.framework in Frameworks */,
+				E5CE16971B28DDDA00731016 /* Bolts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +97,16 @@
 		E53317A91B28B01400B008DB = {
 			isa = PBXGroup;
 			children = (
+				E5CE16AB1B28DE4600731016 /* libsqlite3.dylib */,
+				E5CE16A91B28DE4000731016 /* libz.dylib */,
+				E5CE16A71B28DE3600731016 /* SystemConfiguration.framework */,
+				E5CE16A51B28DE2E00731016 /* StoreKit.framework */,
+				E5CE16A31B28DE2600731016 /* Security.framework */,
+				E5CE16A11B28DE1F00731016 /* QuartzCore.framework */,
+				E5CE169F1B28DE1700731016 /* MobileCoreServices.framework */,
+				E5CE169D1B28DE0F00731016 /* CoreLocation.framework */,
+				E5CE169B1B28DE0900731016 /* CFNetwork.framework */,
+				E5CE16991B28DE0400731016 /* AudioToolbox.framework */,
 				E53317B41B28B01400B008DB /* NJDOT_FuelUp_v2 */,
 				E53317CD1B28B01400B008DB /* NJDOT_FuelUp_v2Tests */,
 				E53317B31B28B01400B008DB /* Products */,
@@ -82,6 +128,8 @@
 				E53317B71B28B01400B008DB /* AppDelegate.swift */,
 				E53317BC1B28B01400B008DB /* ViewController.swift */,
 				E53317BE1B28B01400B008DB /* Main.storyboard */,
+				E5CE16951B28DDDA00731016 /* Bolts.framework */,
+				E5CE16961B28DDDA00731016 /* Parse.framework */,
 				E53317C11B28B01400B008DB /* Images.xcassets */,
 				E53317C31B28B01400B008DB /* LaunchScreen.xib */,
 				E53317B91B28B01400B008DB /* NJDOT_FuelUp_v2.xcdatamodeld */,
@@ -344,6 +392,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/NJDOT_FuelUp_v2",
+				);
 				INFOPLIST_FILE = NJDOT_FuelUp_v2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -354,6 +406,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/NJDOT_FuelUp_v2",
+				);
 				INFOPLIST_FILE = NJDOT_FuelUp_v2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -413,6 +469,7 @@
 				E53317D61B28B01400B008DB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E53317D71B28B01400B008DB /* Build configuration list for PBXNativeTarget "NJDOT_FuelUp_v2Tests" */ = {
 			isa = XCConfigurationList;
@@ -421,6 +478,7 @@
 				E53317D91B28B01400B008DB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
