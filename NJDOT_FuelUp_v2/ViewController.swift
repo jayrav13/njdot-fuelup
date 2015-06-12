@@ -31,6 +31,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     var stationsButton : UIButton!
     var bridgesButton : UIButton!
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(true)
+        navigationController?.setNavigationBarHidden(false, animated: false)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -46,6 +51,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         manager.desiredAccuracy = kCLLocationAccuracyBest
         manager.requestWhenInUseAuthorization()
         manager.startUpdatingLocation()
+        
+        navigationController?.setNavigationBarHidden(false, animated: false)
         
         // establish micro font
         microFontRegular = UIFont(name: "MicroFLF", size: 30)
@@ -112,15 +119,15 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     // what to do when stations or bridges buttons are pressed
     func stationsPressed(sender: UIButton!)
     {
-        println("Stations pressed!")
-        presentViewController(StationsTableViewController(), animated: true) { () -> Void in
+        var navController : UINavigationController = UINavigationController(rootViewController: StationsTableViewController())
+        presentViewController(navController, animated: true) { () -> Void in
             
         }
     }
     
     func bridgesPressed(sender: UIButton!)
     {
-        println("Bridges pressed!")
+        
     }
     
     func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
