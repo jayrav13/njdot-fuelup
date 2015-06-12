@@ -8,20 +8,28 @@
 
 import UIKit
 import Parse
+import CoreLocation
 
 // establish variables for screen size
 var screenWidth : CGFloat = 0.0
 var screenHeight : CGFloat = 0.0
 
-class ViewController: UIViewController {
+// fonts - set during viewDidLoad of this method, for use throughout app
+var microFontRegular : UIFont!
+var microFontBold : UIFont!
 
-    // labels and buttons
+// location
+var manager : CLLocationManager!
+
+class ViewController: UIViewController, CLLocationManagerDelegate {
+
+    // labels
     var mainLabel : UILabel!
     var creditsLabel : UILabel!
+    
+    // buttons
     var stationsButton : UIButton!
     var bridgesButton : UIButton!
-    var microFontRegular : UIFont!
-    var microFontBold : UIFont!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,11 +40,18 @@ class ViewController: UIViewController {
         screenWidth = UIScreen.mainScreen().bounds.width
         screenHeight = UIScreen.mainScreen().bounds.height
         
-        // micro font
+        // establish location
+        manager = CLLocationManager()
+        manager.delegate = self
+        manager.desiredAccuracy = kCLLocationAccuracyBest
+        manager.requestWhenInUseAuthorization()
+        manager.startUpdatingLocation()
+        
+        // establish micro font
         microFontRegular = UIFont(name: "MicroFLF", size: 30)
         microFontBold = UIFont(name: "MicroFLF-Bold", size: 30)
         
-        view.backgroundColor = UIColor.grayColor()
+        view.backgroundColor = UIColor(red: 220.0/255.0, green: 220.0/255.0, blue: 220.0/255.0, alpha: 1)
         
         // establish mainLabel
         mainLabel = UILabel()
@@ -73,7 +88,7 @@ class ViewController: UIViewController {
         // bridges button
         bridgesButton = UIButton.buttonWithType(UIButtonType.System) as! UIButton
         bridgesButton.addTarget(self, action: "bridgesPressed:", forControlEvents: UIControlEvents.TouchUpInside)
-        bridgesButton.frame = CGRectMake(screenWidth/2 - 100, screenHeight/4, 200, 75)
+        bridgesButton.frame = CGRectMake(screenWidth/2 - 100, screenHeight/4 + 50, 200, 75)
         bridgesButton.setTitle("Bridges", forState: UIControlState.Normal)
         bridgesButton.contentHorizontalAlignment = UIControlContentHorizontalAlignment.Center
         bridgesButton.titleLabel!.font = microFontRegular
@@ -87,18 +102,6 @@ class ViewController: UIViewController {
         view.addSubview(stationsButton)
         view.addSubview(bridgesButton)
         
-        fontNames()
-        
-    }
-
-    func fontNames()
-    {
-        let familyNames = UIFont.familyNames()
-        for familyName in familyNames
-        {
-            println("---")
-            println("Name: \(familyName)")
-        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -115,6 +118,10 @@ class ViewController: UIViewController {
     func bridgesPressed(sender: UIButton!)
     {
         println("Bridges pressed!")
+    }
+    
+    func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
+        
     }
 
 

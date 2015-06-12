@@ -22,6 +22,10 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>This app needs to have your location at all times.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>We need to know your current location for this app.</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>MicroFLF.ttf</string>

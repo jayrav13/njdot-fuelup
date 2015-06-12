@@ -77,6 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5CE169E1B28DE0F00731016 /* CoreLocation.framework in Frameworks */,
 				E5CE16AC1B28DE4600731016 /* libsqlite3.dylib in Frameworks */,
 				E5CE16AA1B28DE4000731016 /* libz.dylib in Frameworks */,
 				E5CE16A81B28DE3600731016 /* SystemConfiguration.framework in Frameworks */,
@@ -84,7 +85,6 @@
 				E5CE16A41B28DE2600731016 /* Security.framework in Frameworks */,
 				E5CE16A21B28DE1F00731016 /* QuartzCore.framework in Frameworks */,
 				E5CE16A01B28DE1700731016 /* MobileCoreServices.framework in Frameworks */,
-				E5CE169E1B28DE0F00731016 /* CoreLocation.framework in Frameworks */,
 				E5CE169C1B28DE0900731016 /* CFNetwork.framework in Frameworks */,
 				E5CE169A1B28DE0400731016 /* AudioToolbox.framework in Frameworks */,
 				E5CE16981B28DDDA00731016 /* Parse.framework in Frameworks */,
@@ -133,7 +133,6 @@
 		E53317B41B28B01400B008DB /* NJDOT_FuelUp_v2 */ = {
 			isa = PBXGroup;
 			children = (
-				E598574E1B2A671F00A9CDDD /* Fonts */,
 				E53317B71B28B01400B008DB /* AppDelegate.swift */,
 				E598575A1B2A6A8200A9CDDD /* MicroFLF-Bold.ttf */,
 				E598575B1B2A6A8200A9CDDD /* MicroFLF-BoldItalic.ttf */,
@@ -174,13 +173,6 @@
 				E53317CF1B28B01400B008DB /* Info.plist */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		E598574E1B2A671F00A9CDDD /* Fonts */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
