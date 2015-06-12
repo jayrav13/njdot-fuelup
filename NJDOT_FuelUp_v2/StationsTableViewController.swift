@@ -38,7 +38,6 @@ class StationsTableViewController: UIViewController, UITableViewDataSource, UITa
         var mapBarButton : UIBarButtonItem = UIBarButtonItem(title: "Map", style: UIBarButtonItemStyle.Plain, target: self, action: "mapButton:")
         self.navigationItem.rightBarButtonItem = mapBarButton
         view.addSubview(tableView)
-        println(allStations)
         tableView.reloadData()
         
     }
@@ -64,8 +63,8 @@ class StationsTableViewController: UIViewController, UITableViewDataSource, UITa
     //
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell = tableView.dequeueReusableCellWithIdentifier("cell") as! UITableViewCell
-        
-        cell.textLabel?.text = allStations[indexPath.row]["stationName"] as? String
+    
+        cell.textLabel?.text = allStations[Int(sortedStations[indexPath.row]["id"]!!.doubleValue)]["stationName"] as? String
         
         return cell
     }
@@ -73,7 +72,7 @@ class StationsTableViewController: UIViewController, UITableViewDataSource, UITa
     // push StationsDetailedViewController onto stack. establish stationId so that the next screen can be dynamically loaded with data
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
-        stationId = indexPath.row
+        stationId = Int(sortedStations[indexPath.row]["id"]!!.doubleValue)
         self.navigationController?.pushViewController(StationsDetailViewController(), animated: true)
     }
     

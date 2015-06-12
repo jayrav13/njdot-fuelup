@@ -23,7 +23,7 @@ var manager : CLLocationManager!
 
 // all stations
 var allStations : [PFObject] = []
-var sortedStations : [NSMutableArray] = []
+var sortedStations : NSMutableArray = []
 
 class ViewController: UIViewController, CLLocationManagerDelegate {
 
@@ -151,9 +151,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                     {
                         if let objects = objects as? [PFObject]
                         {
-                            
-                            println(manager.location)
-                            
                             allStations = objects
                             
                             let formula = DistanceFormula()
@@ -162,9 +159,26 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                             {
                                 allStations[i]["stationDistance"] = formula.getDistanceFromLatLongInMiles(Double(manager.location.coordinate.latitude), lat2: allStations[i]["stationLat"]!.doubleValue, lon1: Double(manager.location.coordinate.longitude), lon2: allStations[i]["stationLon"]!.doubleValue)
                                 
+                                sortedStations.addObject(["id" : allStations[i]["id"]!.doubleValue, "distance" : allStations[i]["stationDistance"]!.doubleValue])
                                 
                             }
                             
+                            sortedStations.sortUsingComparator({ (obj1:AnyObject!, obj2:AnyObject!) -> NSComparisonResult in
+                                var one = obj1["distance"]! as! Double
+                                var two = obj2["distance"]! as! Double
+                                if one > two
+                                {
+                                    return NSComparisonResult.OrderedDescending
+                                }
+                                else if two > one
+                                {
+                                    return NSComparisonResult.OrderedAscending
+                                }
+                                else
+                                {
+                                    return NSComparisonResult.OrderedSame
+                                }
+                            })
                             
                             var navController : UINavigationController = UINavigationController(rootViewController: StationsTableViewController())
                             self.presentViewController(navController, animated: true) { () -> Void in
