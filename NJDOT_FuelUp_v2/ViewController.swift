@@ -42,10 +42,13 @@ class ViewController: UIViewController {
         bridgesButton = UIButton.buttonWithType(UIButtonType.System) as! UIButton
         stationsButton.addTarget(self, action: "stationsPressed:", forControlEvents: UIControlEvents.TouchUpInside)
         bridgesButton.addTarget(self, action: "bridgesPressed:", forControlEvents: UIControlEvents.TouchUpInside)
-        stationsButton.frame = CGRectMake(screenWidth/2 - 100, screenHeight/2, 100, 100)
-        bridgesButton.frame = CGRectMake(screenWidth/2 + 100, screenHeight/2, 100, 100)
-        stationsButton.setTitle("Stations Button", forState: UIControlState.Normal)
-        bridgesButton.setTitle("Bridges Button", forState: UIControlState.Normal)
+        stationsButton.frame = CGRectMake(screenWidth/2 - 100, screenHeight/2, 200, 100)
+        bridgesButton.frame = CGRectMake(screenWidth/2 - 100, screenHeight/4, 200, 100)
+        stationsButton.setTitle("Stations", forState: UIControlState.Normal)
+        bridgesButton.setTitle("Bridges", forState: UIControlState.Normal)
+        stationsButton.contentHorizontalAlignment = UIControlContentHorizontalAlignment.Center
+        bridgesButton.contentHorizontalAlignment = UIControlContentHorizontalAlignment.Center
+        bridgesButton.titleLabel!.font = UIFont(
         view.addSubview(stationsButton)
         view.addSubview(bridgesButton)
         
