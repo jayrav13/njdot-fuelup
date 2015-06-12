@@ -19,6 +19,8 @@
 		E59857601B2A6A8900A9CDDD /* MicroFLF-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E598575C1B2A6A8200A9CDDD /* MicroFLF-Italic.ttf */; };
 		E59857611B2A6A8900A9CDDD /* MicroFLF.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E598575D1B2A6A8200A9CDDD /* MicroFLF.ttf */; };
 		E598577D1B2AF4E900A9CDDD /* StationsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E598577C1B2AF4E900A9CDDD /* StationsTableViewController.swift */; };
+		E598577F1B2AFDC600A9CDDD /* StationsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E598577E1B2AFDC600A9CDDD /* StationsDetailViewController.swift */; };
+		E59857811B2B009300A9CDDD /* StationsMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59857801B2B009300A9CDDD /* StationsMapViewController.swift */; };
 		E5CE16971B28DDDA00731016 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5CE16951B28DDDA00731016 /* Bolts.framework */; };
 		E5CE16981B28DDDA00731016 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5CE16961B28DDDA00731016 /* Parse.framework */; };
 		E5CE169A1B28DE0400731016 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5CE16991B28DE0400731016 /* AudioToolbox.framework */; };
@@ -60,6 +62,8 @@
 		E598575C1B2A6A8200A9CDDD /* MicroFLF-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MicroFLF-Italic.ttf"; sourceTree = "<group>"; };
 		E598575D1B2A6A8200A9CDDD /* MicroFLF.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MicroFLF.ttf; sourceTree = "<group>"; };
 		E598577C1B2AF4E900A9CDDD /* StationsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StationsTableViewController.swift; sourceTree = "<group>"; };
+		E598577E1B2AFDC600A9CDDD /* StationsDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StationsDetailViewController.swift; sourceTree = "<group>"; };
+		E59857801B2B009300A9CDDD /* StationsMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StationsMapViewController.swift; sourceTree = "<group>"; };
 		E5CE16951B28DDDA00731016 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		E5CE16961B28DDDA00731016 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		E5CE16991B28DE0400731016 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -141,7 +145,9 @@
 				E598575C1B2A6A8200A9CDDD /* MicroFLF-Italic.ttf */,
 				E598575D1B2A6A8200A9CDDD /* MicroFLF.ttf */,
 				E53317BC1B28B01400B008DB /* ViewController.swift */,
+				E598577E1B2AFDC600A9CDDD /* StationsDetailViewController.swift */,
 				E598577C1B2AF4E900A9CDDD /* StationsTableViewController.swift */,
+				E59857801B2B009300A9CDDD /* StationsMapViewController.swift */,
 				E53317BE1B28B01400B008DB /* Main.storyboard */,
 				E5CE16951B28DDDA00731016 /* Bolts.framework */,
 				E5CE16961B28DDDA00731016 /* Parse.framework */,
@@ -282,7 +288,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E59857811B2B009300A9CDDD /* StationsMapViewController.swift in Sources */,
 				E598577D1B2AF4E900A9CDDD /* StationsTableViewController.swift in Sources */,
+				E598577F1B2AFDC600A9CDDD /* StationsDetailViewController.swift in Sources */,
 				E53317BD1B28B01400B008DB /* ViewController.swift in Sources */,
 				E53317BB1B28B01400B008DB /* NJDOT_FuelUp_v2.xcdatamodeld in Sources */,
 				E53317B81B28B01400B008DB /* AppDelegate.swift in Sources */,

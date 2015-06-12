@@ -8,6 +8,8 @@
 
 import UIKit
 
+var stationId : Int = 0
+
 class StationsTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     var tableView : UITableView!
@@ -26,9 +28,13 @@ class StationsTableViewController: UIViewController, UITableViewDataSource, UITa
         
         self.title = "List of Stations"
         
-        var barButton : UIBarButtonItem = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.Plain, target: self, action: "backButton:")
+        var backBarButton : UIBarButtonItem = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.Plain, target: self, action: "backButton:")
         
-        self.navigationItem.leftBarButtonItem = barButton
+        self.navigationItem.leftBarButtonItem = backBarButton
+        
+        var mapBarButton : UIBarButtonItem = UIBarButtonItem(title: "Map", style: UIBarButtonItemStyle.Plain, target: self, action: "mapButton:")
+        
+        self.navigationItem.rightBarButtonItem = mapBarButton
         
         view.addSubview(tableView)
         
@@ -39,6 +45,11 @@ class StationsTableViewController: UIViewController, UITableViewDataSource, UITa
         presentViewController(ViewController(), animated: true) { () -> Void in
             
         }
+    }
+    
+    func mapButton(sender: UIButton!)
+    {
+        self.navigationController?.pushViewController(StationsMapViewController(), animated: true)
     }
 
     override func didReceiveMemoryWarning() {
@@ -54,7 +65,10 @@ class StationsTableViewController: UIViewController, UITableViewDataSource, UITa
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        println(indexPath.row)
+        
+        stationId = indexPath.row
+        self.navigationController?.pushViewController(StationsDetailViewController(), animated: true)
+        
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
