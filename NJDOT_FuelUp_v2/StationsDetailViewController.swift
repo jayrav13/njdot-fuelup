@@ -12,7 +12,7 @@ class StationsDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        println((allStations[stationId]["stationName"] as? String)!)
         view.backgroundColor = UIColor.whiteColor()
     }
     

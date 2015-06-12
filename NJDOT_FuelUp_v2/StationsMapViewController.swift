@@ -17,6 +17,12 @@ class StationsMapViewController: UIViewController, MKMapViewDelegate {
     {
         super.viewDidLoad()
         map = MKMapView(frame: view.frame)
+
+        var center : CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 40.3140, longitude: -74.5089)
+        var region : MKCoordinateRegion = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 2, longitudeDelta: 2))
+        map.setRegion(region, animated: true)
+        map.mapType = MKMapType.Hybrid
+        
         view.addSubview(map)
     }
     

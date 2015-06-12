@@ -21,6 +21,10 @@ var microFontBold : UIFont!
 // location
 var manager : CLLocationManager!
 
+// all stations
+var allStations : [PFObject] = []
+var sortedStations : [NSMutableArray] = []
+
 class ViewController: UIViewController, CLLocationManagerDelegate {
 
     // labels
@@ -31,10 +35,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     var stationsButton : UIButton!
     var bridgesButton : UIButton!
     
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(true)
-        navigationController?.setNavigationBarHidden(false, animated: false)
-    }
+    // activity indicator
+    var activityIndiciator : UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,12 +54,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         manager.requestWhenInUseAuthorization()
         manager.startUpdatingLocation()
         
-        navigationController?.setNavigationBarHidden(false, animated: false)
-        
         // establish micro font
         microFontRegular = UIFont(name: "MicroFLF", size: 30)
         microFontBold = UIFont(name: "MicroFLF-Bold", size: 30)
         
+        // set background color to gray
         view.backgroundColor = UIColor(red: 220.0/255.0, green: 220.0/255.0, blue: 220.0/255.0, alpha: 1)
         
         // establish mainLabel
@@ -105,7 +106,14 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         bridgesButton.layer.borderWidth = 1
         bridgesButton.layer.borderColor = UIColor.blackColor().CGColor
         
+        // establish activity indicator
+        activityIndiciator = UIActivityIndicatorView(frame: CGRectMake(screenWidth/2-10, screenHeight*(3/4), 20, 20))
+        activityIndiciator.color = UIColor.blackColor()
+        activityIndiciator.alpha = 0
+        activityIndiciator.stopAnimating()
+        view.addSubview(activityIndiciator)
         
+        // add buttons to view
         view.addSubview(stationsButton)
         view.addSubview(bridgesButton)
         
@@ -116,20 +124,86 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    // what to do when stations or bridges buttons are pressed
+    // present ViewController with list of stations
     func stationsPressed(sender: UIButton!)
     {
-        var navController : UINavigationController = UINavigationController(rootViewController: StationsTableViewController())
-        presentViewController(navController, animated: true) { () -> Void in
-            
+        // if location authorization not set, print to logs
+        if CLLocationManager.authorizationStatus() != .AuthorizedWhenInUse
+        {
+            println("Requires authorization")
         }
+        // else
+        else
+        {
+            // show/animate activity indicator
+            activityIndiciator.alpha = 1
+            activityIndiciator.startAnimating()
+            
+            // if allStations haven't been pulled yet, query
+            if allStations.count == 0
+            {
+                // establish query for all stations
+                var query = PFQuery(className: "stations")
+                
+                // run query block
+                query.findObjectsInBackgroundWithBlock { (objects: [AnyObject]?, error: NSError?) -> Void in
+                    if error == nil
+                    {
+                        if let objects = objects as? [PFObject]
+                        {
+                            
+                            println(manager.location)
+                            
+                            allStations = objects
+                            
+                            let formula = DistanceFormula()
+                            
+                            for var i = 0; i < allStations.count; i++
+                            {
+                                allStations[i]["stationDistance"] = formula.getDistanceFromLatLongInMiles(Double(manager.location.coordinate.latitude), lat2: allStations[i]["stationLat"]!.doubleValue, lon1: Double(manager.location.coordinate.longitude), lon2: allStations[i]["stationLon"]!.doubleValue)
+                                
+                                
+                            }
+                            
+                            
+                            var navController : UINavigationController = UINavigationController(rootViewController: StationsTableViewController())
+                            self.presentViewController(navController, animated: true) { () -> Void in
+                                self.activityIndiciator.stopAnimating()
+                                self.activityIndiciator.alpha = 0
+                            }
+                        }
+                        else
+                        {
+                            println("Something happened!")
+                        }
+                    }
+                    else
+                    {
+                        println(error)
+                    }
+                }
+            }
+            // otherwise, just go to navViewController - no need to query every time!
+            else
+            {
+                var navController : UINavigationController = UINavigationController(rootViewController: StationsTableViewController())
+                self.presentViewController(navController, animated: true) { () -> Void in
+                    self.activityIndiciator.stopAnimating()
+                    self.activityIndiciator.alpha = 0
+                }
+            }
+
+        }
+
     }
     
+    // present ViewController for user to input Bridge Id
     func bridgesPressed(sender: UIButton!)
     {
         
     }
     
+    // see your location changing (if you ever want to)!
     func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
         
     }
