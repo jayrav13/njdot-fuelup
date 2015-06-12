@@ -113,6 +113,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     func stationsPressed(sender: UIButton!)
     {
         println("Stations pressed!")
+        presentViewController(StationsTableViewController(), animated: true) { () -> Void in
+            
+        }
     }
     
     func bridgesPressed(sender: UIButton!)
