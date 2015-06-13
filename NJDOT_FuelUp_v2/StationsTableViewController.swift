@@ -70,7 +70,16 @@ class StationsTableViewController: UIViewController, UITableViewDataSource, UITa
         
         cell.detailTextLabel?.text = String(Int(sortedStations[indexPath.row]["distance"]!!.doubleValue)) + " mi"
         
+        cell.textLabel?.font = UIFont(name: "Raleway-Light", size: 20)
+        
+        cell.detailTextLabel?.font = UIFont(name: "Raleway-Light", size: 16)
+        cell.detailTextLabel?.textColor = UIColor.redColor()
+        
         return cell
+    }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 60.0
     }
     
     // push StationsDetailedViewController onto stack. establish stationId so that the next screen can be dynamically loaded with data

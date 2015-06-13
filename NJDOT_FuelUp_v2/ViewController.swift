@@ -150,12 +150,15 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                 query.findObjectsInBackgroundWithBlock { (objects: [AnyObject]?, error: NSError?) -> Void in
                     if error == nil
                     {
+                        // as long as the data exists, set it equal to the allStations global variable
                         if let objects = objects as? [PFObject]
                         {
                             allStations = objects
                             
+                            // set up an object to use to leverage the distance formula
                             let formula = DistanceFormula()
                             
+                            // for each station, add it to the all stations array and sorted stations array
                             for var i = 0; i < allStations.count; i++
                             {
                                 allStations[i]["stationDistance"] = formula.getDistanceFromLatLongInMiles(Double(manager.location.coordinate.latitude), lat2: allStations[i]["stationLat"]!.doubleValue, lon1: Double(manager.location.coordinate.longitude), lon2: allStations[i]["stationLon"]!.doubleValue)
@@ -164,6 +167,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                                 
                             }
                             
+                            // sort stations
                             sortedStations.sortUsingComparator({ (obj1:AnyObject!, obj2:AnyObject!) -> NSComparisonResult in
                                 var one = obj1["distance"]! as! Double
                                 var two = obj2["distance"]! as! Double
@@ -181,17 +185,20 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                                 }
                             })
                             
+                            // create a new navigation controller and push it onto the stack
                             var navController : UINavigationController = UINavigationController(rootViewController: StationsTableViewController())
                             self.presentViewController(navController, animated: true) { () -> Void in
                                 self.activityIndiciator.stopAnimating()
                                 self.activityIndiciator.alpha = 0
                             }
                         }
+                        // if object is nil, something unexpected happened
                         else
                         {
                             println("Something happened!")
                         }
                     }
+                    // print error if one exists
                     else
                     {
                         println(error)
