@@ -64,7 +64,11 @@ class StationsTableViewController: UIViewController, UITableViewDataSource, UITa
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell = tableView.dequeueReusableCellWithIdentifier("cell") as! UITableViewCell
     
-        cell.textLabel?.text = allStations[Int(sortedStations[indexPath.row]["id"]!!.doubleValue)]["stationName"] as? String
+        cell = UITableViewCell(style: UITableViewCellStyle.Value1, reuseIdentifier: "cell")
+        
+        cell.textLabel?.text = allStations[Int(sortedStations[indexPath.row]["id"]!!.doubleValue) - 1]["stationName"] as? String
+        
+        cell.detailTextLabel?.text = String(Int(sortedStations[indexPath.row]["distance"]!!.doubleValue)) + " mi"
         
         return cell
     }
@@ -72,13 +76,13 @@ class StationsTableViewController: UIViewController, UITableViewDataSource, UITa
     // push StationsDetailedViewController onto stack. establish stationId so that the next screen can be dynamically loaded with data
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
-        stationId = Int(sortedStations[indexPath.row]["id"]!!.doubleValue)
+        stationId = Int(sortedStations[indexPath.row]["id"]!!.doubleValue - 1)
         self.navigationController?.pushViewController(StationsDetailViewController(), animated: true)
     }
     
     // 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return allStations.count
+        return sortedStations.count
     }
     
 }

@@ -13,6 +13,8 @@ var map : MKMapView!
 
 class StationsMapViewController: UIViewController, MKMapViewDelegate {
 
+    var pins : [MKPointAnnotation] = []
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -24,6 +26,16 @@ class StationsMapViewController: UIViewController, MKMapViewDelegate {
         map.mapType = MKMapType.Hybrid
         
         view.addSubview(map)
+        
+        for var x = 0; x < allStations.count; x++
+        {
+            pins.append(MKPointAnnotation())
+            // pins[x] = MKPointAnnotation()
+            var loc = CLLocationCoordinate2D(latitude: CLLocationDegrees(allStations[x]["stationLat"]!.doubleValue), longitude: CLLocationDegrees(allStations[x]["stationLon"]!.doubleValue))
+            pins[x].coordinate = loc
+            pins[x].title = (allStations[x]["stationName"] as? String)!
+            map.addAnnotation(pins[x])
+        }
     }
     
     override func didReceiveMemoryWarning() {

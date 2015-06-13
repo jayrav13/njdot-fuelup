@@ -14,14 +14,12 @@
 		E53317C21B28B01400B008DB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E53317C11B28B01400B008DB /* Images.xcassets */; };
 		E53317C51B28B01400B008DB /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E53317C31B28B01400B008DB /* LaunchScreen.xib */; };
 		E53317D11B28B01400B008DB /* NJDOT_FuelUp_v2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53317D01B28B01400B008DB /* NJDOT_FuelUp_v2Tests.swift */; };
-		E598575E1B2A6A8900A9CDDD /* MicroFLF-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E598575A1B2A6A8200A9CDDD /* MicroFLF-Bold.ttf */; };
-		E598575F1B2A6A8900A9CDDD /* MicroFLF-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E598575B1B2A6A8200A9CDDD /* MicroFLF-BoldItalic.ttf */; };
-		E59857601B2A6A8900A9CDDD /* MicroFLF-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E598575C1B2A6A8200A9CDDD /* MicroFLF-Italic.ttf */; };
-		E59857611B2A6A8900A9CDDD /* MicroFLF.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E598575D1B2A6A8200A9CDDD /* MicroFLF.ttf */; };
 		E598577D1B2AF4E900A9CDDD /* StationsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E598577C1B2AF4E900A9CDDD /* StationsTableViewController.swift */; };
 		E598577F1B2AFDC600A9CDDD /* StationsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E598577E1B2AFDC600A9CDDD /* StationsDetailViewController.swift */; };
 		E59857811B2B009300A9CDDD /* StationsMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59857801B2B009300A9CDDD /* StationsMapViewController.swift */; };
 		E59857851B2B216400A9CDDD /* DistanceFormula.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59857841B2B216400A9CDDD /* DistanceFormula.swift */; };
+		E598579B1B2BC5D400A9CDDD /* Raleway-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E59857921B2BC5D400A9CDDD /* Raleway-Bold.ttf */; };
+		E598579F1B2BC5D400A9CDDD /* Raleway-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E59857961B2BC5D400A9CDDD /* Raleway-Light.ttf */; };
 		E5CE16971B28DDDA00731016 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5CE16951B28DDDA00731016 /* Bolts.framework */; };
 		E5CE16981B28DDDA00731016 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5CE16961B28DDDA00731016 /* Parse.framework */; };
 		E5CE169A1B28DE0400731016 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5CE16991B28DE0400731016 /* AudioToolbox.framework */; };
@@ -58,14 +56,12 @@
 		E53317CA1B28B01400B008DB /* NJDOT_FuelUp_v2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NJDOT_FuelUp_v2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E53317CF1B28B01400B008DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E53317D01B28B01400B008DB /* NJDOT_FuelUp_v2Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NJDOT_FuelUp_v2Tests.swift; sourceTree = "<group>"; };
-		E598575A1B2A6A8200A9CDDD /* MicroFLF-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MicroFLF-Bold.ttf"; sourceTree = "<group>"; };
-		E598575B1B2A6A8200A9CDDD /* MicroFLF-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MicroFLF-BoldItalic.ttf"; sourceTree = "<group>"; };
-		E598575C1B2A6A8200A9CDDD /* MicroFLF-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MicroFLF-Italic.ttf"; sourceTree = "<group>"; };
-		E598575D1B2A6A8200A9CDDD /* MicroFLF.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MicroFLF.ttf; sourceTree = "<group>"; };
 		E598577C1B2AF4E900A9CDDD /* StationsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StationsTableViewController.swift; sourceTree = "<group>"; };
 		E598577E1B2AFDC600A9CDDD /* StationsDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StationsDetailViewController.swift; sourceTree = "<group>"; };
 		E59857801B2B009300A9CDDD /* StationsMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StationsMapViewController.swift; sourceTree = "<group>"; };
 		E59857841B2B216400A9CDDD /* DistanceFormula.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DistanceFormula.swift; sourceTree = "<group>"; };
+		E59857921B2BC5D400A9CDDD /* Raleway-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Bold.ttf"; sourceTree = "<group>"; };
+		E59857961B2BC5D400A9CDDD /* Raleway-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Light.ttf"; sourceTree = "<group>"; };
 		E5CE16951B28DDDA00731016 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		E5CE16961B28DDDA00731016 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		E5CE16991B28DE0400731016 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -141,11 +137,8 @@
 		E53317B41B28B01400B008DB /* NJDOT_FuelUp_v2 */ = {
 			isa = PBXGroup;
 			children = (
+				E59857A41B2BC5DC00A9CDDD /* Fonts */,
 				E53317B71B28B01400B008DB /* AppDelegate.swift */,
-				E598575A1B2A6A8200A9CDDD /* MicroFLF-Bold.ttf */,
-				E598575B1B2A6A8200A9CDDD /* MicroFLF-BoldItalic.ttf */,
-				E598575C1B2A6A8200A9CDDD /* MicroFLF-Italic.ttf */,
-				E598575D1B2A6A8200A9CDDD /* MicroFLF.ttf */,
 				E53317BC1B28B01400B008DB /* ViewController.swift */,
 				E59857841B2B216400A9CDDD /* DistanceFormula.swift */,
 				E598577E1B2AFDC600A9CDDD /* StationsDetailViewController.swift */,
@@ -185,6 +178,15 @@
 				E53317CF1B28B01400B008DB /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E59857A41B2BC5DC00A9CDDD /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				E59857921B2BC5D400A9CDDD /* Raleway-Bold.ttf */,
+				E59857961B2BC5D400A9CDDD /* Raleway-Light.ttf */,
+			);
+			name = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,13 +269,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E598575E1B2A6A8900A9CDDD /* MicroFLF-Bold.ttf in Resources */,
-				E598575F1B2A6A8900A9CDDD /* MicroFLF-BoldItalic.ttf in Resources */,
-				E59857601B2A6A8900A9CDDD /* MicroFLF-Italic.ttf in Resources */,
-				E59857611B2A6A8900A9CDDD /* MicroFLF.ttf in Resources */,
+				E598579B1B2BC5D400A9CDDD /* Raleway-Bold.ttf in Resources */,
 				E53317C01B28B01400B008DB /* Main.storyboard in Resources */,
 				E53317C51B28B01400B008DB /* LaunchScreen.xib in Resources */,
 				E53317C21B28B01400B008DB /* Images.xcassets in Resources */,
+				E598579F1B2BC5D400A9CDDD /* Raleway-Light.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

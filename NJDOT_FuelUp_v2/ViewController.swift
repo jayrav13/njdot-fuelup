@@ -1,3 +1,4 @@
+
 //
 //  ViewController.swift
 //  NJDOT_FuelUp_v2
@@ -55,8 +56,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         manager.startUpdatingLocation()
         
         // establish micro font
-        microFontRegular = UIFont(name: "MicroFLF", size: 30)
-        microFontBold = UIFont(name: "MicroFLF-Bold", size: 30)
+        microFontRegular = UIFont(name: "Raleway-Light", size: 30)
+        microFontBold = UIFont(name: "Raleway-Bold", size: 30)
         
         // set background color to gray
         view.backgroundColor = UIColor(red: 220.0/255.0, green: 220.0/255.0, blue: 220.0/255.0, alpha: 1)
@@ -64,7 +65,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         // establish mainLabel
         mainLabel = UILabel()
         mainLabel.frame = CGRectMake(screenWidth/2 - 150, screenHeight/6 - 50, 300, 100)
-        mainLabel.text = "NJ Fuel Up v2.0"
+        mainLabel.text = "NJ FUEL UP v2.0"
         mainLabel.textAlignment = NSTextAlignment.Center
         mainLabel.font = microFontBold
         view.addSubview(mainLabel)
@@ -84,7 +85,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         stationsButton = UIButton.buttonWithType(UIButtonType.System) as! UIButton
         stationsButton.addTarget(self, action: "stationsPressed:", forControlEvents: UIControlEvents.TouchUpInside)
         stationsButton.frame = CGRectMake(screenWidth/2 - 100, screenHeight/2, 200, 75)
-        stationsButton.setTitle("Stations", forState: UIControlState.Normal)
+        stationsButton.setTitle("STATIONS", forState: UIControlState.Normal)
         stationsButton.contentHorizontalAlignment = UIControlContentHorizontalAlignment.Center
         stationsButton.titleLabel!.font = microFontRegular
         stationsButton.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
@@ -97,7 +98,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         bridgesButton = UIButton.buttonWithType(UIButtonType.System) as! UIButton
         bridgesButton.addTarget(self, action: "bridgesPressed:", forControlEvents: UIControlEvents.TouchUpInside)
         bridgesButton.frame = CGRectMake(screenWidth/2 - 100, screenHeight/4 + 50, 200, 75)
-        bridgesButton.setTitle("Bridges", forState: UIControlState.Normal)
+        bridgesButton.setTitle("BRIDGES", forState: UIControlState.Normal)
         bridgesButton.contentHorizontalAlignment = UIControlContentHorizontalAlignment.Center
         bridgesButton.titleLabel!.font = microFontRegular
         bridgesButton.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
