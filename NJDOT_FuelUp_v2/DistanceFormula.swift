@@ -10,6 +10,8 @@ import Darwin
 import Foundation
 import UIKit
 
+// the sole purpose of this viewcontroller is to establish the below getDistanceFromLatLongInMiles formula
+
 class DistanceFormula:UIViewController {
     
     func getDistanceFromLatLongInMiles(lat1: Double, lat2: Double, lon1: Double, lon2: Double) -> Double
