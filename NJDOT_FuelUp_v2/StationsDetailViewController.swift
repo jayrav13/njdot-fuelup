@@ -124,7 +124,19 @@ class StationsDetailViewController: UIViewController, MKMapViewDelegate {
     
     func buttonMenu(sender: UIButton!)
     {
-        println("Test")
+        var actionSheet = UIAlertController(title: "Station Menu", message: "Select an Option", preferredStyle: UIAlertControllerStyle.ActionSheet)
+        actionSheet.addAction(UIAlertAction(title: "Navigate", style: UIAlertActionStyle.Default, handler: { (alert: UIAlertAction!) -> Void in
+            println("Navigate pressed")
+        }))
+        actionSheet.addAction(UIAlertAction(title: "Call", style: UIAlertActionStyle.Default, handler: { (alert: UIAlertAction!) -> Void in
+            println("Call pressed")
+        }))
+        actionSheet.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: { (alert: UIAlertAction!) -> Void in
+            println("Cancel pressed")
+        }))
+        self.presentViewController(actionSheet, animated: true) { () -> Void in
+            println("Action sheet opened")
+        }
     }
     
 }
