@@ -126,9 +126,30 @@ class StationsDetailViewController: UIViewController, MKMapViewDelegate {
     {
         var actionSheet = UIAlertController(title: "Station Menu", message: "Select an Option", preferredStyle: UIAlertControllerStyle.ActionSheet)
         actionSheet.addAction(UIAlertAction(title: "Navigate", style: UIAlertActionStyle.Default, handler: { (alert: UIAlertAction!) -> Void in
+            
+            if UIApplication.sharedApplication().openURL(NSURL(string: "comgooglemaps://?q=" + allStations[stationId]["stationLat"]!.stringValue + "," + allStations[stationId]["stationLon"]!.stringValue)!)
+            {
+                UIApplication.sharedApplication().openURL(NSURL(string: "comgooglemaps://?q=" + allStations[stationId]["stationLat"]!.stringValue + "," + allStations[stationId]["stationLon"]!.stringValue)!)
+            }
+            else
+            {
+                UIApplication.sharedApplication().openURL(NSURL(string: "http://maps.google.com/?q=" + allStations[stationId]["stationLat"]!.stringValue + "," + allStations[stationId]["stationLon"]!.stringValue)!)
+            }
             println("Navigate pressed")
+        
         }))
         actionSheet.addAction(UIAlertAction(title: "Call", style: UIAlertActionStyle.Default, handler: { (alert: UIAlertAction!) -> Void in
+            
+            println((allStations[stationId]["stationName"] as? String)!)
+            
+            if UIApplication.sharedApplication().openURL(NSURL(string: "tel://" + (allStations[stationId]["stationPhoneNumber"] as? String)!)!)
+            {
+                UIApplication.sharedApplication().openURL(NSURL(string: "tel://" + (allStations[stationId]["stationPhoneNumber"] as? String)!)!)
+            }
+            else
+            {
+                println("Call functionality failed")
+            }
             println("Call pressed")
         }))
         actionSheet.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: { (alert: UIAlertAction!) -> Void in
