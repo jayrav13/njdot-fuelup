@@ -9,6 +9,7 @@
 
 import UIKit
 import Parse
+import Foundation
 import CoreLocation
 
 // establish variables for screen size
@@ -22,15 +23,16 @@ var microFontBold : UIFont!
 // location
 var manager : CLLocationManager!
 
-// all stations
+// all stations or bridges
 var allStations : [PFObject] = []
+var allBridges : [PFObject] = []
 var sortedStations : NSMutableArray = []
+var bridgesArray : NSMutableArray = NSMutableArray()
 
 class ViewController: UIViewController, CLLocationManagerDelegate {
 
     // labels
     var mainLabel : UILabel!
-    var creditsLabel : UILabel!
     
     // buttons
     var stationsButton : UIButton!
@@ -70,16 +72,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         mainLabel.font = microFontBold
         view.addSubview(mainLabel)
         
-        // credits
-        creditsLabel = UILabel()
-        creditsLabel.frame = CGRectMake(0, screenHeight-25, screenWidth, 25)
-        creditsLabel.backgroundColor = UIColor.blackColor()
-        creditsLabel.text = "By Jay Ravaliya, Parth Oza 2015"
-        creditsLabel.textAlignment = NSTextAlignment.Center
-        creditsLabel.font = UIFont(name: "MicroFLF", size: 12)
-        creditsLabel.textColor = UIColor.whiteColor()
-        view.addSubview(creditsLabel)
-        
         // establish Stations and Bridges buttons
         // stations button
         stationsButton = UIButton.buttonWithType(UIButtonType.System) as! UIButton
@@ -88,8 +80,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         stationsButton.setTitle("STATIONS", forState: UIControlState.Normal)
         stationsButton.contentHorizontalAlignment = UIControlContentHorizontalAlignment.Center
         stationsButton.titleLabel!.font = microFontRegular
-        stationsButton.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
-        stationsButton.backgroundColor = UIColor.clearColor()
+        stationsButton.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
+        stationsButton.backgroundColor = UIColor.blackColor()
         stationsButton.layer.cornerRadius = 5
         stationsButton.layer.borderWidth = 1
         stationsButton.layer.borderColor = UIColor.blackColor().CGColor
@@ -101,8 +93,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         bridgesButton.setTitle("BRIDGES", forState: UIControlState.Normal)
         bridgesButton.contentHorizontalAlignment = UIControlContentHorizontalAlignment.Center
         bridgesButton.titleLabel!.font = microFontRegular
-        bridgesButton.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
-        bridgesButton.backgroundColor = UIColor.clearColor()
+        bridgesButton.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
+        bridgesButton.backgroundColor = UIColor.blackColor()
         bridgesButton.layer.cornerRadius = 5
         bridgesButton.layer.borderWidth = 1
         bridgesButton.layer.borderColor = UIColor.blackColor().CGColor
@@ -219,17 +211,71 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
 
     }
     
+    let alert: UIAlertController = UIAlertController(title: "Loading...", message: "0% Complete", preferredStyle: UIAlertControllerStyle.Alert)
+    
     // present ViewController for user to input Bridge Id
     func bridgesPressed(sender: UIButton!)
     {
+        self.presentViewController(alert, animated: true) { () -> Void in
+            
+        }
         
+        // if location authorization not set, print to logs
+        if CLLocationManager.authorizationStatus() != .AuthorizedWhenInUse
+        {
+            println("Requires authorization")
+        }
+        else
+        {
+            var skip = 0
+            var limit = 1000
+            
+            queryBridges(0, limit: 1000)
+        }
     }
     
     // see your location changing (if you ever want to)!
     func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
         
     }
-
+    
+    var value : Double = 0.0
+    
+    func queryBridges(skip : Int, limit : Int)
+    {
+        var query = PFQuery(className: "bridges")
+        query.limit = limit
+        query.skip = skip
+        query.findObjectsInBackgroundWithBlock({ (objects: [AnyObject]?, error: NSError?) -> Void in
+            if(error == nil)
+            {
+                bridgesArray.addObjectsFromArray(objects!)
+            }
+            
+            self.value = (Double(bridgesArray.count) / 6543.0) * 100
+            self.alert.message = (NSString(format: "%.2f", self.value) as String) + "% Complete"
+            self.alert.reloadInputViews()
+            
+            if(objects!.count == limit)
+            {
+                self.queryBridges(skip + limit, limit: limit)
+            }
+            else
+            {
+                self.alert.self.dismissViewControllerAnimated(false, completion: { () -> Void in
+                    
+                })
+                self.pushToBridgeTableViewController()
+            }
+        })
+    }
+    
+    func pushToBridgeTableViewController()
+    {
+        var navController : UINavigationController = UINavigationController(rootViewController: BridgesTableViewController())
+        self.presentViewController(navController, animated: true, completion: { () -> Void in
+            
+        })
+    }
 
 }
-

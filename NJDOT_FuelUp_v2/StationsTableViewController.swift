@@ -90,6 +90,7 @@ class StationsTableViewController: UIViewController, UITableViewDataSource, UITa
         stationId = Int(sortedStations[indexPath.row]["id"]!!.doubleValue - 1)
         sortedId = Int(indexPath.row)
         self.navigationController?.pushViewController(StationsDetailViewController(), animated: true)
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
     
     // return the number of stations in the sortedStations array. returning this or returning
