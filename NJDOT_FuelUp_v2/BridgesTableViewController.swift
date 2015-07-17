@@ -8,7 +8,10 @@
 
 import UIKit
 
-class BridgesTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchResultsUpdating {
+var searchResults : NSMutableArray!
+var isBlank : Bool = true
+
+class BridgesTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchResultsUpdating, UISearchBarDelegate {
 
     var searchBar : UISearchBar!
     var tableView : UITableView!
@@ -35,7 +38,9 @@ class BridgesTableViewController: UIViewController, UITableViewDataSource, UITab
         searchController.searchBar.sizeToFit()
         self.tableView.tableHeaderView = searchController.searchBar
         
-        println(bridgesArray.count)
+        searchResults = []
+        
+        searchController.searchBar.delegate = self
     }
     
     override func didReceiveMemoryWarning() {
@@ -47,18 +52,68 @@ class BridgesTableViewController: UIViewController, UITableViewDataSource, UITab
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return bridgesArray.count
+        if(isBlank == true)
+        {
+            return bridgesArray.count
+        }
+        else
+        {
+            if(searchResults.count == 0)
+            {
+                return 1
+            }
+            else
+            {
+                return searchResults.count
+            }
+        }
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell = tableView.dequeueReusableCellWithIdentifier("cell") as! UITableViewCell
-        cell.textLabel?.text = "Bridge: " + (bridgesArray[indexPath.row]["str_no"] as! String)
+        
+        cell.textLabel?.textAlignment = NSTextAlignment.Left
+        
+        if(isBlank == true)
+        {
+            cell.textLabel?.text = "Bridge: " + (bridgesArray[indexPath.row]["str_no"] as! String)
+        }
+        else
+        {
+            if(searchResults.count == 0)
+            {
+                cell.textLabel?.text = "No results found."
+                cell.textLabel?.textAlignment = NSTextAlignment.Center
+            }
+            else
+            {
+                cell.textLabel?.text = "Bridge: " + (searchResults[indexPath.row]["str_no"] as! String)
+            }
+        }
+        
         return cell
     }
     
     func updateSearchResultsForSearchController(searchController: UISearchController) {
         // println(searchController.searchBar.text)
-        
+        if count(searchController.searchBar.text) != 0
+        {
+            searchResults = []
+            isBlank = false
+            for var i = 0; i < bridgesArray.count; i++
+            {
+                if ((bridgesArray[i]["str_no"] as! String).rangeOfString(searchController.searchBar.text) != nil)
+                {
+                    searchResults.addObject(bridgesArray[i])
+                }
+            }
+        }
+        else
+        {
+            isBlank = true
+        }
+
+        tableView.reloadData()
     }
     
     func backButton(sender: UIButton!)
@@ -68,6 +123,10 @@ class BridgesTableViewController: UIViewController, UITableViewDataSource, UITab
         }
     }
     
+    func searchBarCancelButtonClicked(searchBar: UISearchBar) {
+        isBlank = true
+        tableView.reloadData()
+    }
 
     
 }

@@ -41,6 +41,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     // activity indicator
     var activityIndiciator : UIActivityIndicatorView!
     
+    var value : Double = 0.0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -109,6 +111,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         // add buttons to view
         view.addSubview(stationsButton)
         view.addSubview(bridgesButton)
+        
+        value = 0.0
         
     }
     
@@ -216,9 +220,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     // present ViewController for user to input Bridge Id
     func bridgesPressed(sender: UIButton!)
     {
-        self.presentViewController(alert, animated: true) { () -> Void in
-            
-        }
         
         // if location authorization not set, print to logs
         if CLLocationManager.authorizationStatus() != .AuthorizedWhenInUse
@@ -230,7 +231,17 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             var skip = 0
             var limit = 1000
             
-            queryBridges(0, limit: 1000)
+            if bridgesArray.count == 0
+            {
+                self.presentViewController(alert, animated: true) { () -> Void in
+                    
+                }
+                queryBridges(0, limit: 1000)
+            }
+            else
+            {
+                pushToBridgeTableViewController()
+            }
         }
     }
     
@@ -238,8 +249,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
         
     }
-    
-    var value : Double = 0.0
     
     func queryBridges(skip : Int, limit : Int)
     {
