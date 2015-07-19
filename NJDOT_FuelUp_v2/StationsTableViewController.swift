@@ -46,9 +46,9 @@ class StationsTableViewController: UIViewController, UITableViewDataSource, UITa
     // present the initial ViewController via back button
     func backButton(sender: UIButton!)
     {
-        presentViewController(ViewController(), animated: true) { () -> Void in
+        self.dismissViewControllerAnimated(true, completion: { () -> Void in
             
-        }
+        })
     }
     
     // push StationsMapViewController onto stack

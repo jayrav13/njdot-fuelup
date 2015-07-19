@@ -7,6 +7,7 @@
 //  Copyright (c) 2015 JRav. All rights reserved.
 //
 
+// imports
 import UIKit
 import Parse
 import Foundation
@@ -16,18 +17,20 @@ import CoreLocation
 var screenWidth : CGFloat = 0.0
 var screenHeight : CGFloat = 0.0
 
-// fonts - set during viewDidLoad of this method, for use throughout app
-var microFontRegular : UIFont!
-var microFontBold : UIFont!
+// fonts - set for user thorughout the app
+var microFontRegular : UIFont = UIFont(name: "Raleway-Light", size: 30)!
+var microFontBold : UIFont = UIFont(name: "Raleway-Bold", size: 30)!
 
-// location
+// location manager - starts later in the app
 var manager : CLLocationManager!
 
 // all stations or bridges
+// query objects
 var allStations : [PFObject] = []
 var allBridges : [PFObject] = []
+// data structures for post-manipulation, used in other ViewControllers
 var sortedStations : NSMutableArray = []
-var bridgesArray : NSMutableArray = NSMutableArray()
+var bridgesArray : NSMutableArray = []
 
 class ViewController: UIViewController, CLLocationManagerDelegate {
 
@@ -41,16 +44,20 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     // activity indicator
     var activityIndiciator : UIActivityIndicatorView!
     
+    // create alert, establish variable for % value as query is running
+    let alert: UIAlertController = UIAlertController(title: "Loading...", message: "0% Complete", preferredStyle: UIAlertControllerStyle.Alert)
     var value : Double = 0.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         
         // calculate screen width and height for the entire screen, 
         // used throughout the app
-        screenWidth = UIScreen.mainScreen().bounds.width
-        screenHeight = UIScreen.mainScreen().bounds.height
+        if screenWidth == 0.0 || screenHeight == 0.0
+        {
+            screenWidth = UIScreen.mainScreen().bounds.width
+            screenHeight = UIScreen.mainScreen().bounds.height
+        }
         
         // establish location
         manager = CLLocationManager()
@@ -58,10 +65,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         manager.desiredAccuracy = kCLLocationAccuracyBest
         manager.requestWhenInUseAuthorization()
         manager.startUpdatingLocation()
-        
-        // establish micro font
-        microFontRegular = UIFont(name: "Raleway-Light", size: 30)
-        microFontBold = UIFont(name: "Raleway-Bold", size: 30)
         
         // set background color to gray
         view.backgroundColor = UIColor(red: 220.0/255.0, green: 220.0/255.0, blue: 220.0/255.0, alpha: 1)
@@ -106,28 +109,38 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         activityIndiciator.color = UIColor.blackColor()
         activityIndiciator.alpha = 0
         activityIndiciator.stopAnimating()
-        view.addSubview(activityIndiciator)
         
-        // add buttons to view
+        // add buttons and activity indicator to view
         view.addSubview(stationsButton)
         view.addSubview(bridgesButton)
-        
-        value = 0.0
-        
+        view.addSubview(activityIndiciator)
+    
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
-    // present ViewController with list of stations
+    // function warningMessage
+    // purpose - display an alert message when requested
+    func warningMessage(title : String, message : String)
+    {
+        let warning: UIAlertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
+        warning.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: { (action : UIAlertAction!) -> Void in
+            println("Cancelled")
+        }))
+        self.presentViewController(warning, animated: true) { () -> Void in
+            
+        }
+    }
+    
+    // present ViewController with sorted list of stations
     func stationsPressed(sender: UIButton!)
     {
         // if location authorization not set, print to logs
         if CLLocationManager.authorizationStatus() != .AuthorizedWhenInUse
         {
-            println("Requires authorization")
+            warningMessage("Location Manager", message: "Be sure to give this app permission for Location Services in Settings!")
         }
         // else
         else
@@ -182,11 +195,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                             })
                             
                             // create a new navigation controller and push it onto the stack
-                            var navController : UINavigationController = UINavigationController(rootViewController: StationsTableViewController())
-                            self.presentViewController(navController, animated: true) { () -> Void in
-                                self.activityIndiciator.stopAnimating()
-                                self.activityIndiciator.alpha = 0
-                            }
+                            self.pushToStationsTableViewController()
                         }
                         // if object is nil, something unexpected happened
                         else
@@ -204,19 +213,12 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             // otherwise, just go to navViewController - no need to query every time!
             else
             {
-                var navController : UINavigationController = UINavigationController(rootViewController: StationsTableViewController())
-                self.presentViewController(navController, animated: true) { () -> Void in
-                    self.activityIndiciator.stopAnimating()
-                    self.activityIndiciator.alpha = 0
-                }
+                self.pushToStationsTableViewController()
             }
-
         }
 
     }
-    
-    let alert: UIAlertController = UIAlertController(title: "Loading...", message: "0% Complete", preferredStyle: UIAlertControllerStyle.Alert)
-    
+
     // present ViewController for user to input Bridge Id
     func bridgesPressed(sender: UIButton!)
     {
@@ -224,7 +226,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         // if location authorization not set, print to logs
         if CLLocationManager.authorizationStatus() != .AuthorizedWhenInUse
         {
-            println("Requires authorization")
+            warningMessage("Location Manager", message: "Be sure to give this app permission for Location Services in Settings!")
         }
         else
         {
@@ -234,9 +236,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             if bridgesArray.count == 0
             {
                 self.presentViewController(alert, animated: true) { () -> Void in
-                    
+                    self.queryBridges(0, limit: 1000)
                 }
-                queryBridges(0, limit: 1000)
             }
             else
             {
@@ -272,19 +273,30 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             else
             {
                 self.alert.self.dismissViewControllerAnimated(false, completion: { () -> Void in
-                    
+                    self.pushToBridgeTableViewController()
                 })
-                self.pushToBridgeTableViewController()
             }
         })
     }
     
+    // push to View Controllers methods
     func pushToBridgeTableViewController()
     {
         var navController : UINavigationController = UINavigationController(rootViewController: BridgesTableViewController())
+        navController.modalTransitionStyle = UIModalTransitionStyle.FlipHorizontal
         self.presentViewController(navController, animated: true, completion: { () -> Void in
             
         })
+    }
+    
+    func pushToStationsTableViewController()
+    {
+        var navController : UINavigationController = UINavigationController(rootViewController: StationsTableViewController())
+        navController.modalTransitionStyle = UIModalTransitionStyle.FlipHorizontal
+        self.presentViewController(navController, animated: true) { () -> Void in
+            self.activityIndiciator.stopAnimating()
+            self.activityIndiciator.alpha = 0
+        }
     }
 
 }
