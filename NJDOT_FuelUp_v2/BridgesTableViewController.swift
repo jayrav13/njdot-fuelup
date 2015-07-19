@@ -27,7 +27,6 @@ class BridgesTableViewController: UIViewController, UITableViewDataSource, UITab
     
     // sets up DetailsView View and opaqueView
     var opaqueView : UIView!
-    var jr : JRDetailsView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,8 +60,6 @@ class BridgesTableViewController: UIViewController, UITableViewDataSource, UITab
         // when loaded, searchController should be blank with no text
         isBlank = true
         searchController.searchBar.text = ""
-        
-        jr = JRDetailsView(frame: view.frame)
     }
     
     override func didReceiveMemoryWarning() {
@@ -109,18 +106,20 @@ class BridgesTableViewController: UIViewController, UITableViewDataSource, UITab
             }
         }
         
+        var jr : JRDetailsView = JRDetailsView(frame: view.frame)
         jr.object = currentObject
-        // present the view and deselect the row directly after
-        
-        UIView.transitionWithView(self.view, duration: 0.25, options: UIViewAnimationOptions.TransitionCrossDissolve, animations: { () -> Void in
-            
-                self.view.addSubview(self.jr)
-            
-            }) { (finished: Bool) -> Void in
-                
-        }
+        self.view.addSubview(jr)
         
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        
+        // present the view and deselect the row directly after
+        UIView.transitionWithView(self.view, duration: 0.25, options: UIViewAnimationOptions.TransitionCrossDissolve, animations: { () -> Void in
+            
+            }) { (finished: Bool) -> Void in
+
+        }
+        
+        
     }
     
     // determine how many rows are in the main section
