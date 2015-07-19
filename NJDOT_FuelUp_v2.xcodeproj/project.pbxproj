@@ -16,6 +16,7 @@
 		E53317D11B28B01400B008DB /* NJDOT_FuelUp_v2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53317D01B28B01400B008DB /* NJDOT_FuelUp_v2Tests.swift */; };
 		E571BDA31B581D6700AE7FEE /* BridgesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E571BDA21B581D6700AE7FEE /* BridgesTableViewController.swift */; };
 		E586CA561B5AADEE00A3CB6C /* JRDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E586CA551B5AADEE00A3CB6C /* JRDetailsView.swift */; };
+		E586CA5A1B5B24A400A3CB6C /* icons in Resources */ = {isa = PBXBuildFile; fileRef = E586CA591B5B24A400A3CB6C /* icons */; };
 		E598577D1B2AF4E900A9CDDD /* StationsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E598577C1B2AF4E900A9CDDD /* StationsTableViewController.swift */; };
 		E598577F1B2AFDC600A9CDDD /* StationsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E598577E1B2AFDC600A9CDDD /* StationsDetailViewController.swift */; };
 		E59857811B2B009300A9CDDD /* StationsMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59857801B2B009300A9CDDD /* StationsMapViewController.swift */; };
@@ -60,6 +61,7 @@
 		E53317D01B28B01400B008DB /* NJDOT_FuelUp_v2Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NJDOT_FuelUp_v2Tests.swift; sourceTree = "<group>"; };
 		E571BDA21B581D6700AE7FEE /* BridgesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BridgesTableViewController.swift; sourceTree = "<group>"; };
 		E586CA551B5AADEE00A3CB6C /* JRDetailsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRDetailsView.swift; sourceTree = "<group>"; };
+		E586CA591B5B24A400A3CB6C /* icons */ = {isa = PBXFileReference; lastKnownFileType = folder; path = icons; sourceTree = "<group>"; };
 		E598577C1B2AF4E900A9CDDD /* StationsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StationsTableViewController.swift; sourceTree = "<group>"; };
 		E598577E1B2AFDC600A9CDDD /* StationsDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StationsDetailViewController.swift; sourceTree = "<group>"; };
 		E59857801B2B009300A9CDDD /* StationsMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StationsMapViewController.swift; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 				E598577E1B2AFDC600A9CDDD /* StationsDetailViewController.swift */,
 				E598577C1B2AF4E900A9CDDD /* StationsTableViewController.swift */,
 				E571BDA21B581D6700AE7FEE /* BridgesTableViewController.swift */,
+				E586CA591B5B24A400A3CB6C /* icons */,
 				E586CA551B5AADEE00A3CB6C /* JRDetailsView.swift */,
 				E59857801B2B009300A9CDDD /* StationsMapViewController.swift */,
 				E53317BE1B28B01400B008DB /* Main.storyboard */,
@@ -279,6 +282,7 @@
 				E598579B1B2BC5D400A9CDDD /* Raleway-Bold.ttf in Resources */,
 				E53317C01B28B01400B008DB /* Main.storyboard in Resources */,
 				E53317C51B28B01400B008DB /* LaunchScreen.xib in Resources */,
+				E586CA5A1B5B24A400A3CB6C /* icons in Resources */,
 				E53317C21B28B01400B008DB /* Images.xcassets in Resources */,
 				E598579F1B2BC5D400A9CDDD /* Raleway-Light.ttf in Resources */,
 			);
