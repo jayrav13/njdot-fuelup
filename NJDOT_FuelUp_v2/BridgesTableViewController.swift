@@ -52,6 +52,7 @@ class BridgesTableViewController: UIViewController, UITableViewDataSource, UITab
         searchController.dimsBackgroundDuringPresentation = false
         searchController.searchBar.sizeToFit()
         searchController.searchBar.delegate = self
+        searchController.searchBar.placeholder = "Search Structure No"
         self.tableView.tableHeaderView = searchController.searchBar
         
         // set up searchResults array to have nothing
@@ -106,18 +107,12 @@ class BridgesTableViewController: UIViewController, UITableViewDataSource, UITab
             }
         }
         
-        var jr : JRDetailsView = JRDetailsView(frame: view.frame)
-        jr.object = currentObject
-        self.view.addSubview(jr)
+        var bvc : BridgesDetailTableViewController = BridgesDetailTableViewController()
+        bvc.currentObject = currentObject
+
+        self.navigationController?.pushViewController(bvc, animated: true)
         
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        
-        // present the view and deselect the row directly after
-        UIView.transitionWithView(self.view, duration: 0.25, options: UIViewAnimationOptions.TransitionCrossDissolve, animations: { () -> Void in
-            
-            }) { (finished: Bool) -> Void in
-
-        }
         
         
     }
