@@ -1,0 +1,386 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E52347FA1C59CC3800CF0466 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52347F91C59CC3800CF0466 /* AppDelegate.swift */; };
+		E52347FC1C59CC3800CF0466 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52347FB1C59CC3800CF0466 /* ViewController.swift */; };
+		E52347FF1C59CC3800CF0466 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E52347FD1C59CC3800CF0466 /* Main.storyboard */; };
+		E52348021C59CC3800CF0466 /* NJDOT_v3.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E52348001C59CC3800CF0466 /* NJDOT_v3.xcdatamodeld */; };
+		E52348041C59CC3800CF0466 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E52348031C59CC3800CF0466 /* Assets.xcassets */; };
+		E52348071C59CC3800CF0466 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E52348051C59CC3800CF0466 /* LaunchScreen.storyboard */; };
+		F90987BB19FDF1705D18EF30 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67F3F745F011B0F9195E59AE /* Pods.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		67F3F745F011B0F9195E59AE /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A725984EE21F087CB60DCE47 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		AA92EC712BA2C9B7F10A91FD /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		E52347F61C59CC3800CF0466 /* NJDOT-v3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NJDOT-v3.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E52347F91C59CC3800CF0466 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E52347FB1C59CC3800CF0466 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E52347FE1C59CC3800CF0466 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E52348011C59CC3800CF0466 /* NJDOT_v3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NJDOT_v3.xcdatamodel; sourceTree = "<group>"; };
+		E52348031C59CC3800CF0466 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E52348061C59CC3800CF0466 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E52348081C59CC3800CF0466 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E52347F31C59CC3800CF0466 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F90987BB19FDF1705D18EF30 /* Pods.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8533E454D10680FD541EAD9E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				67F3F745F011B0F9195E59AE /* Pods.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AF5C3D15CA4CC3427B6CED86 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A725984EE21F087CB60DCE47 /* Pods.debug.xcconfig */,
+				AA92EC712BA2C9B7F10A91FD /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		E52347ED1C59CC3800CF0466 = {
+			isa = PBXGroup;
+			children = (
+				E52347F81C59CC3800CF0466 /* NJDOT-v3 */,
+				E52347F71C59CC3800CF0466 /* Products */,
+				AF5C3D15CA4CC3427B6CED86 /* Pods */,
+				8533E454D10680FD541EAD9E /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		E52347F71C59CC3800CF0466 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E52347F61C59CC3800CF0466 /* NJDOT-v3.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E52347F81C59CC3800CF0466 /* NJDOT-v3 */ = {
+			isa = PBXGroup;
+			children = (
+				E52347F91C59CC3800CF0466 /* AppDelegate.swift */,
+				E52347FB1C59CC3800CF0466 /* ViewController.swift */,
+				E52347FD1C59CC3800CF0466 /* Main.storyboard */,
+				E52348031C59CC3800CF0466 /* Assets.xcassets */,
+				E52348051C59CC3800CF0466 /* LaunchScreen.storyboard */,
+				E52348081C59CC3800CF0466 /* Info.plist */,
+				E52348001C59CC3800CF0466 /* NJDOT_v3.xcdatamodeld */,
+			);
+			path = "NJDOT-v3";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E52347F51C59CC3800CF0466 /* NJDOT-v3 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E523480B1C59CC3800CF0466 /* Build configuration list for PBXNativeTarget "NJDOT-v3" */;
+			buildPhases = (
+				3779E80B94F52DFEF31AE7E0 /* Check Pods Manifest.lock */,
+				E52347F21C59CC3800CF0466 /* Sources */,
+				E52347F31C59CC3800CF0466 /* Frameworks */,
+				E52347F41C59CC3800CF0466 /* Resources */,
+				D0186FB2C95188B3ECE3B56E /* Embed Pods Frameworks */,
+				B08C59D6881D8D0371F2D239 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "NJDOT-v3";
+			productName = "NJDOT-v3";
+			productReference = E52347F61C59CC3800CF0466 /* NJDOT-v3.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E52347EE1C59CC3800CF0466 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0710;
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = JRav;
+				TargetAttributes = {
+					E52347F51C59CC3800CF0466 = {
+						CreatedOnToolsVersion = 7.1.1;
+					};
+				};
+			};
+			buildConfigurationList = E52347F11C59CC3800CF0466 /* Build configuration list for PBXProject "NJDOT-v3" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E52347ED1C59CC3800CF0466;
+			productRefGroup = E52347F71C59CC3800CF0466 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E52347F51C59CC3800CF0466 /* NJDOT-v3 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E52347F41C59CC3800CF0466 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E52348071C59CC3800CF0466 /* LaunchScreen.storyboard in Resources */,
+				E52348041C59CC3800CF0466 /* Assets.xcassets in Resources */,
+				E52347FF1C59CC3800CF0466 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3779E80B94F52DFEF31AE7E0 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B08C59D6881D8D0371F2D239 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D0186FB2C95188B3ECE3B56E /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E52347F21C59CC3800CF0466 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E52347FC1C59CC3800CF0466 /* ViewController.swift in Sources */,
+				E52348021C59CC3800CF0466 /* NJDOT_v3.xcdatamodeld in Sources */,
+				E52347FA1C59CC3800CF0466 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		E52347FD1C59CC3800CF0466 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E52347FE1C59CC3800CF0466 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E52348051C59CC3800CF0466 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E52348061C59CC3800CF0466 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E52348091C59CC3800CF0466 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		E523480A1C59CC3800CF0466 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E523480C1C59CC3800CF0466 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A725984EE21F087CB60DCE47 /* Pods.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "NJDOT-v3/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jrav.NJDOT-v3";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		E523480D1C59CC3800CF0466 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AA92EC712BA2C9B7F10A91FD /* Pods.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "NJDOT-v3/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jrav.NJDOT-v3";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E52347F11C59CC3800CF0466 /* Build configuration list for PBXProject "NJDOT-v3" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E52348091C59CC3800CF0466 /* Debug */,
+				E523480A1C59CC3800CF0466 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E523480B1C59CC3800CF0466 /* Build configuration list for PBXNativeTarget "NJDOT-v3" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E523480C1C59CC3800CF0466 /* Debug */,
+				E523480D1C59CC3800CF0466 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		E52348001C59CC3800CF0466 /* NJDOT_v3.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				E52348011C59CC3800CF0466 /* NJDOT_v3.xcdatamodel */,
+			);
+			currentVersion = E52348011C59CC3800CF0466 /* NJDOT_v3.xcdatamodel */;
+			path = NJDOT_v3.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = E52347EE1C59CC3800CF0466 /* Project object */;
+}

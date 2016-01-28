@@ -1,6 +1,2 @@
-debugdump.txt
 .DS_Store
-*.png
-*.jpg
-*.zip
-icons/*
+Pods/
