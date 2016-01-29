@@ -13,6 +13,7 @@
 		E52348021C59CC3800CF0466 /* NJDOT_v3.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E52348001C59CC3800CF0466 /* NJDOT_v3.xcdatamodeld */; };
 		E52348041C59CC3800CF0466 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E52348031C59CC3800CF0466 /* Assets.xcassets */; };
 		E52348071C59CC3800CF0466 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E52348051C59CC3800CF0466 /* LaunchScreen.storyboard */; };
+		E5EB98461C5BA8E000C85911 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EB98451C5BA8E000C85911 /* API.swift */; };
 		F90987BB19FDF1705D18EF30 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67F3F745F011B0F9195E59AE /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -28,6 +29,7 @@
 		E52348031C59CC3800CF0466 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E52348061C59CC3800CF0466 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E52348081C59CC3800CF0466 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E5EB98451C5BA8E000C85911 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 			children = (
 				E52347F91C59CC3800CF0466 /* AppDelegate.swift */,
 				E52347FB1C59CC3800CF0466 /* ViewController.swift */,
+				E5EB98451C5BA8E000C85911 /* API.swift */,
 				E52347FD1C59CC3800CF0466 /* Main.storyboard */,
 				E52348031C59CC3800CF0466 /* Assets.xcassets */,
 				E52348051C59CC3800CF0466 /* LaunchScreen.storyboard */,
@@ -215,6 +218,7 @@
 			files = (
 				E52347FC1C59CC3800CF0466 /* ViewController.swift in Sources */,
 				E52348021C59CC3800CF0466 /* NJDOT_v3.xcdatamodeld in Sources */,
+				E5EB98461C5BA8E000C85911 /* API.swift in Sources */,
 				E52347FA1C59CC3800CF0466 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
