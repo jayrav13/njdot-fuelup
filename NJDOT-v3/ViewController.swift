@@ -16,6 +16,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     var refreshControl : UIRefreshControl!
     var segmentedControl : UISegmentedControl!
     
+    var mapBarButtonItem : UIBarButtonItem!
+    
     var locationManager : CLLocationManager!
     
     var data : [String : JSON]!
@@ -57,6 +59,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         self.activityIndicator.alpha = 0
         self.view.addSubview(self.activityIndicator)
         
+        self.mapBarButtonItem = UIBarButtonItem(title: "Map", style: UIBarButtonItemStyle.Plain, target: self, action: "mapBarButtonItemPressed:")
+        self.navigationItem.rightBarButtonItem = self.mapBarButtonItem
+        
         self.data = ["stations" : [], "bridges" : []]
         self.getData(true)
     }
@@ -65,6 +70,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        self.segmentedControl.alpha = 1
     }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -174,6 +183,30 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func setDataValue(index : String, data : JSON) {
         self.data[index] = data
+    }
+    
+    func mapBarButtonItemPressed(sender : UIButton) {
+        let mvc : MapViewController = MapViewController()
+        mvc.latitude = self.locationManager.location?.coordinate.latitude
+        mvc.longitude = self.locationManager.location?.coordinate.longitude
+        
+        if(self.segmentedControl.selectedSegmentIndex == 0) {
+            mvc.dataType = "stations"
+            mvc.data = self.data["stations"]
+        }
+        else {
+            mvc.dataType = "bridges"
+            mvc.data = self.data["bridges"]
+        }
+        
+        if(self.data[mvc.dataType]!.count != 0) {
+            self.segmentedControl.alpha = 0
+            self.navigationController?.pushViewController(mvc, animated: true)
+        }
+        else {
+            // Data still loading, wait yo.
+        }
+        
     }
 }
 
